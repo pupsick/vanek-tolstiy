@@ -1,0 +1,79 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- navigation -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Ванек не толстый (c)</div>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        </div>
+    </div>
+    <!-- end navigation -->
+
+    <!-- content -->
+
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="mt-4">Регистрация учащегося</h1>
+                    <form>
+                        <div class="form-group">
+                            <label for="nameInput">Имя</label>
+                            <input type="text" disabled id="nameInput" class="form-control" placeholder="Имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="surnameInput">Фамилия</label>
+                            <input type="text" disabled id="surnameInput" class="form-control" placeholder="Фамилия">
+                        </div>
+                        <div class="form-group">
+                            <label for="patronymicInput">Отчество</label>
+                            <input type="text" disabled id="patronymicInput" class="form-control" placeholder="Отчество">
+                        </div>
+                        <div class="form-group">
+                            <label for="loginInput">Логин</label>
+                            <input type="text" disabled id="loginInput" class="form-control" placeholder="Логин">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailInput">E-mail</label>
+                            <input type="email" id="emailInput" class="form-control" placeholder="E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword">Пароль</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Пароль">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputRepassword">Повтор пароля</label>
+                            <input type="repassword" class="form-control" id="inputRepassword" placeholder="Повтор пароля">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end content -->
+
+    <!-- footer -->
+
+    <!-- end footer -->
+</div>
+</body>
+</html>
