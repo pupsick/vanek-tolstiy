@@ -49,6 +49,15 @@
                                 <option value="3">Three</option>
                             </select>
                         </div>
+                        <div id="group_selectors" class="form-group">
+                            <label>Группы</label>
+                            <select class="group-selector custom-select mb-2" data-index="0">
+                                <option selected>Группа</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
                         <button type="submit" class="btn btn-primary">Обновить</button>
                         <button type="submit" class="btn btn-danger">Удалить</button>
                     </form>
@@ -63,5 +72,18 @@
 
     <!-- end footer -->
 </div>
+<script type="application/javascript">
+    $("body").on("change", "select.group-selector", (el) => {
+        let element = $(el.target);
+        let index = parseInt(element.attr("data-index")) + 1;
+        console.log("new index is " + index);
+        if ($("select.group-selector[data-index=" + index + "]").length === 0)
+        {
+            console.log("creating");
+            let new_el = element.clone().attr("data-index", index);
+            $("#group_selectors").append(new_el);
+        }
+    });
+</script>
 </body>
 </html>
