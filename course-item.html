@@ -76,10 +76,8 @@
     $("body").on("change", "select.group-selector", (el) => {
         let element = $(el.target);
         let index = parseInt(element.attr("data-index")) + 1;
-        console.log("new index is " + index);
         if ($("select.group-selector[data-index=" + index + "]").length === 0)
         {
-            console.log("creating");
             let new_el = element.clone().attr("data-index", index);
             $("#group_selectors").append(new_el);
         }
