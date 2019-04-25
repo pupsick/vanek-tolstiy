@@ -58,7 +58,7 @@
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
-                                <i class="material-icons mt-2 ml-2 delete-course" style="color: red; cursor: pointer;">
+                                <i class="material-icons mt-2 ml-2 delete-group" style="color: red; cursor: pointer;">
                                     clear
                                 </i>
                             </div>
@@ -88,7 +88,7 @@
         }
     });
 
-    $("body").on("click", "i.delete-course", (el) => {
+    $("body").on("click", "i.delete-group", (el) => {
         let element = $(el.target);
         element.parent("div.group-selector")[0].remove();
     });

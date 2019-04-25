@@ -63,6 +63,20 @@
                                 </i>
                             </div>
                         </div>
+                        <div id="group_selectors" class="form-group">
+                            <label>Группы</label>
+                            <div class="group-selector d-flex">
+                                <select class="select-group custom-select mb-2" data-index="0" name="group[]">
+                                    <option selected>Группа</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <i class="material-icons mt-2 ml-2 delete-group" style="color: red; cursor: pointer;">
+                                    clear
+                                </i>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="emailInput">E-mail</label>
                             <input type="email" id="emailInput" class="form-control" placeholder="E-mail">
@@ -94,6 +108,20 @@
         $("body").on("click", "i.delete-course", (el) => {
             let element = $(el.target);
             element.parent("div.course-selector")[0].remove();
+        });
+        $("body").on("change", "select.select-group", (el) => {
+            let element = $(el.target);
+            let index = parseInt(element.attr("data-index")) + 1;
+            if ($("select.group-selector[data-index=" + index + "]").length === 0) {
+                let new_el = element.parent().clone();
+                new_el.find("select").attr("data-index", index);
+                $("#group_selectors").append(new_el);
+            }
+        });
+
+        $("body").on("click", "i.delete-group", (el) => {
+            let element = $(el.target);
+            element.parent("div.group-selector")[0].remove();
         });
     </script>
 </div>
