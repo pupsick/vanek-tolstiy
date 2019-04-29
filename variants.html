@@ -54,7 +54,7 @@
                                 <a href="#"><i class="material-icons">
                                     create
                                 </i></a>
-                                <a href="/" onClick="setId(1); return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
+                                <a href="/" onClick="setId(1, 'haha'); return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
                                     delete
                                 </i></a>
                             </td>
@@ -128,9 +128,10 @@
 <script type="application/javascript">
     var current_id = 0;
 
-    function setId(id)
+    function setId(id, title = 'test')
     {
         current_id = id;
+        $(".modal-body").html('Вы действительно хотите удалить ' + title + '?');
     }
 
     function sendRequest() {
