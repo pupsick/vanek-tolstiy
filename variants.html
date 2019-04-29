@@ -1,8 +1,6 @@
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
@@ -56,7 +54,7 @@
                                 <a href="#"><i class="material-icons">
                                     create
                                 </i></a>
-                                <a href="/" onClick="return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
+                                <a href="/" onClick="setId(1); return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
                                     delete
                                 </i></a>
                             </td>
@@ -70,7 +68,7 @@
                                 <a href="#"><i class="material-icons">
                                     create
                                 </i></a>
-                                <a href="/" onClick="return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
+                                <a href="/" onClick="setId(1); return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
                                     delete
                                 </i></a>
                             </td>
@@ -84,7 +82,7 @@
                                 <a href="#"><i class="material-icons">
                                     create
                                 </i></a>
-                                <a href="/" onClick="return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
+                                <a href="/" onClick="setId(1); return false" data-toggle="modal" data-target="#deleteModal"><i class="material-icons">
                                     delete
                                 </i></a>
                             </td>
@@ -115,7 +113,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-primary">Подтвердить</button>
+        <button type="button" class="btn btn-primary" onclick="sendRequest(); return false;">Подтвердить</button>
       </div>
     </div>
   </div>
@@ -127,5 +125,19 @@
 
     <!-- end footer -->
 </div>
+<script type="application/javascript">
+    var current_id = 0;
+
+    function setId(id)
+    {
+        current_id = id;
+    }
+
+    function sendRequest() {
+        $.post("/test/url" + current_id, () => {
+           $("#deleteModal").modal('hide');
+        });
+    }
+</script>
 </body>
 </html>
